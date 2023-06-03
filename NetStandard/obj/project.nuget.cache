@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "m5QdIK1ScdwNSomNdVkx2nye1KjSL2KdFiDjH3FC/TBbQIbY2ujgf+rfhptO2P+o4q7zgmzqrnnwT3/WwLL9Nw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\pc1\\OneDrive\\Desktop\\Local\\Dev\\Opencv\\NetStandard\\NetStandard.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pc1\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\pc1\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\pc1\\.nuget\\packages\\opencvsharp4\\4.7.0.20230115\\opencvsharp4.4.7.0.20230115.nupkg.sha512",
+    "C:\\Users\\pc1\\.nuget\\packages\\opencvsharp4.extensions\\4.7.0.20230115\\opencvsharp4.extensions.4.7.0.20230115.nupkg.sha512",
+    "C:\\Users\\pc1\\.nuget\\packages\\opencvsharp4.runtime.win\\4.7.0.20230115\\opencvsharp4.runtime.win.4.7.0.20230115.nupkg.sha512",
+    "C:\\Users\\pc1\\.nuget\\packages\\opencvsharp4.windows\\4.7.0.20230115\\opencvsharp4.windows.4.7.0.20230115.nupkg.sha512",
+    "C:\\Users\\pc1\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\pc1\\.nuget\\packages\\system.drawing.common\\5.0.3\\system.drawing.common.5.0.3.nupkg.sha512",
+    "C:\\Users\\pc1\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\pc1\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\pc1\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
