@@ -423,5 +423,28 @@ namespace NetFrame
             txtbox.Text += $"{YUV_temp2.Get<Vec3b>(0).Item0},{YUV_temp2.Get<Vec3b>(0).Item1},{YUV_temp2.Get<Vec3b>(0).Item2}\r\n";
             txtbox.Text += $"{YUV_temp3.Get<Vec3b>(0).Item0},{YUV_temp3.Get<Vec3b>(0).Item1},{YUV_temp3.Get<Vec3b>(0).Item2}\r\n";
         }
+
+        private void us_btn1_Click(object sender, EventArgs e)
+        {
+            Mat mat = Mat.Zeros(255,255, MatType.CV_8UC1); //grayscale 은 0 일때 흰색 255 흑색
+
+            for(int i = 0; i < mat.Height; i++)
+            {
+                for(int j = 0; j < mat.Width; j++)
+                {
+                    if (i > 127)
+                    {
+                        mat.At<byte>(i,j) = byte.MaxValue;
+                    }
+                    
+                }
+            }
+
+            picturebox.Size = new System.Drawing.Size(mat.Width, mat.Height);
+
+            picturebox.Image = mat.ToBitmap();
+
+
+        }
     }
 }

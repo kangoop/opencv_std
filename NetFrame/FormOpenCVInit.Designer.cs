@@ -48,9 +48,10 @@
             this.btn_colorspace_read = new System.Windows.Forms.Button();
             this.btn_colorsclae_read = new System.Windows.Forms.Button();
             this.btn_grayscale = new System.Windows.Forms.Button();
+            this.btn_rgbtohsv = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolstatus_label = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btn_rgbtohsv = new System.Windows.Forms.Button();
+            this.us_btn1 = new NetFrame.us_btn();
             this.tablepnl_Main.SuspendLayout();
             this.menu_flowpnl.SuspendLayout();
             this.tablepnl_output.SuspendLayout();
@@ -248,6 +249,7 @@
             this.submenu_flowpnl.Controls.Add(this.btn_colorsclae_read);
             this.submenu_flowpnl.Controls.Add(this.btn_grayscale);
             this.submenu_flowpnl.Controls.Add(this.btn_rgbtohsv);
+            this.submenu_flowpnl.Controls.Add(this.us_btn1);
             this.submenu_flowpnl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.submenu_flowpnl.Location = new System.Drawing.Point(3, 67);
             this.submenu_flowpnl.Name = "submenu_flowpnl";
@@ -284,6 +286,16 @@
             this.btn_grayscale.UseVisualStyleBackColor = true;
             this.btn_grayscale.Click += new System.EventHandler(this.btn_grayscale_Click);
             // 
+            // btn_rgbtohsv
+            // 
+            this.btn_rgbtohsv.Location = new System.Drawing.Point(421, 3);
+            this.btn_rgbtohsv.Name = "btn_rgbtohsv";
+            this.btn_rgbtohsv.Size = new System.Drawing.Size(100, 50);
+            this.btn_rgbtohsv.TabIndex = 6;
+            this.btn_rgbtohsv.Text = "bgrtohsv";
+            this.btn_rgbtohsv.UseVisualStyleBackColor = true;
+            this.btn_rgbtohsv.Click += new System.EventHandler(this.btn_rgbtohsv_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -301,15 +313,15 @@
             this.toolstatus_label.Size = new System.Drawing.Size(75, 20);
             this.toolstatus_label.Text = "tool_label";
             // 
-            // btn_rgbtohsv
+            // us_btn1
             // 
-            this.btn_rgbtohsv.Location = new System.Drawing.Point(421, 3);
-            this.btn_rgbtohsv.Name = "btn_rgbtohsv";
-            this.btn_rgbtohsv.Size = new System.Drawing.Size(100, 50);
-            this.btn_rgbtohsv.TabIndex = 6;
-            this.btn_rgbtohsv.Text = "bgrtohsv";
-            this.btn_rgbtohsv.UseVisualStyleBackColor = true;
-            this.btn_rgbtohsv.Click += new System.EventHandler(this.btn_rgbtohsv_Click);
+            this.us_btn1.Location = new System.Drawing.Point(527, 3);
+            this.us_btn1.Name = "us_btn1";
+            this.us_btn1.Size = new System.Drawing.Size(100, 50);
+            this.us_btn1.TabIndex = 7;
+            this.us_btn1.Text = "create_grayscale";
+            this.us_btn1.UseVisualStyleBackColor = true;
+            this.us_btn1.Click += new System.EventHandler(this.us_btn1_Click);
             // 
             // FormOpenCVInit
             // 
@@ -359,5 +371,6 @@
         private System.Windows.Forms.Button btn_colorsclae_read;
         private System.Windows.Forms.Button btn_grayscale;
         private System.Windows.Forms.Button btn_rgbtohsv;
+        private us_btn us_btn1;
     }
 }

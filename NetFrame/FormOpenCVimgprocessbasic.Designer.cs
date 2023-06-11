@@ -33,8 +33,6 @@
             this.label_location = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.pnl_picturebox = new System.Windows.Forms.Panel();
-            this.picturebox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picturebox_basic = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -43,14 +41,27 @@
             this.us_btn3 = new NetFrame.us_btn();
             this.us_btn4 = new NetFrame.us_btn();
             this.us_btn5 = new NetFrame.us_btn();
+            this.thresholding_btn = new NetFrame.us_btn();
+            this.btn_thresholding_otsu = new NetFrame.us_btn();
+            this.btn_thresholding_apaptivethreshold = new NetFrame.us_btn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.picturebox = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.picturebox_sub1 = new System.Windows.Forms.PictureBox();
+            this.picturebox_sub2 = new System.Windows.Forms.PictureBox();
             this.tablepnl_main.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.pnl_picturebox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_basic)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub2)).BeginInit();
             this.SuspendLayout();
             // 
             // tablepnl_main
@@ -104,40 +115,21 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.pnl_picturebox, 0, 1);
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel3, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel4, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 195);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1576, 623);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // pnl_picturebox
-            // 
-            this.pnl_picturebox.AutoScroll = true;
-            this.pnl_picturebox.Controls.Add(this.picturebox);
-            this.pnl_picturebox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_picturebox.Location = new System.Drawing.Point(3, 314);
-            this.pnl_picturebox.Name = "pnl_picturebox";
-            this.pnl_picturebox.Size = new System.Drawing.Size(1570, 306);
-            this.pnl_picturebox.TabIndex = 0;
-            // 
-            // picturebox
-            // 
-            this.picturebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picturebox.Location = new System.Drawing.Point(0, 0);
-            this.picturebox.Name = "picturebox";
-            this.picturebox.Size = new System.Drawing.Size(160, 90);
-            this.picturebox.TabIndex = 0;
-            this.picturebox.TabStop = false;
             // 
             // panel1
             // 
@@ -146,7 +138,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1570, 305);
+            this.panel1.Size = new System.Drawing.Size(782, 305);
             this.panel1.TabIndex = 1;
             // 
             // picturebox_basic
@@ -167,6 +159,9 @@
             this.flowLayoutPanel1.Controls.Add(this.us_btn3);
             this.flowLayoutPanel1.Controls.Add(this.us_btn4);
             this.flowLayoutPanel1.Controls.Add(this.us_btn5);
+            this.flowLayoutPanel1.Controls.Add(this.thresholding_btn);
+            this.flowLayoutPanel1.Controls.Add(this.btn_thresholding_otsu);
+            this.flowLayoutPanel1.Controls.Add(this.btn_thresholding_apaptivethreshold);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -223,6 +218,91 @@
             this.us_btn5.UseVisualStyleBackColor = true;
             this.us_btn5.Click += new System.EventHandler(this.us_btn5_Click);
             // 
+            // thresholding_btn
+            // 
+            this.thresholding_btn.Location = new System.Drawing.Point(533, 3);
+            this.thresholding_btn.Name = "thresholding_btn";
+            this.thresholding_btn.Size = new System.Drawing.Size(100, 50);
+            this.thresholding_btn.TabIndex = 6;
+            this.thresholding_btn.Text = "thresholding";
+            this.thresholding_btn.UseVisualStyleBackColor = true;
+            this.thresholding_btn.Click += new System.EventHandler(this.thresholding_btn_Click);
+            // 
+            // btn_thresholding_otsu
+            // 
+            this.btn_thresholding_otsu.Location = new System.Drawing.Point(639, 3);
+            this.btn_thresholding_otsu.Name = "btn_thresholding_otsu";
+            this.btn_thresholding_otsu.Size = new System.Drawing.Size(150, 50);
+            this.btn_thresholding_otsu.TabIndex = 7;
+            this.btn_thresholding_otsu.Text = "thresholding_otsu";
+            this.btn_thresholding_otsu.UseVisualStyleBackColor = true;
+            this.btn_thresholding_otsu.Click += new System.EventHandler(this.btn_thresholding_otsu_Click);
+            // 
+            // btn_thresholding_apaptivethreshold
+            // 
+            this.btn_thresholding_apaptivethreshold.Location = new System.Drawing.Point(795, 3);
+            this.btn_thresholding_apaptivethreshold.Name = "btn_thresholding_apaptivethreshold";
+            this.btn_thresholding_apaptivethreshold.Size = new System.Drawing.Size(150, 50);
+            this.btn_thresholding_apaptivethreshold.TabIndex = 8;
+            this.btn_thresholding_apaptivethreshold.Text = "thresholding_apaptivethreshold";
+            this.btn_thresholding_apaptivethreshold.UseVisualStyleBackColor = true;
+            this.btn_thresholding_apaptivethreshold.Click += new System.EventHandler(this.btn_thresholding_apaptivethreshold_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.picturebox);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 314);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(782, 306);
+            this.panel2.TabIndex = 2;
+            // 
+            // picturebox
+            // 
+            this.picturebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturebox.Location = new System.Drawing.Point(0, 0);
+            this.picturebox.Name = "picturebox";
+            this.picturebox.Size = new System.Drawing.Size(160, 90);
+            this.picturebox.TabIndex = 1;
+            this.picturebox.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.picturebox_sub1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(791, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(782, 305);
+            this.panel3.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.picturebox_sub2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(791, 314);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(782, 306);
+            this.panel4.TabIndex = 4;
+            // 
+            // picturebox_sub1
+            // 
+            this.picturebox_sub1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturebox_sub1.Location = new System.Drawing.Point(0, 0);
+            this.picturebox_sub1.Name = "picturebox_sub1";
+            this.picturebox_sub1.Size = new System.Drawing.Size(160, 90);
+            this.picturebox_sub1.TabIndex = 2;
+            this.picturebox_sub1.TabStop = false;
+            // 
+            // picturebox_sub2
+            // 
+            this.picturebox_sub2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturebox_sub2.Location = new System.Drawing.Point(0, 0);
+            this.picturebox_sub2.Name = "picturebox_sub2";
+            this.picturebox_sub2.Size = new System.Drawing.Size(160, 90);
+            this.picturebox_sub2.TabIndex = 2;
+            this.picturebox_sub2.TabStop = false;
+            // 
             // FormOpenCVimgprocessbasic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -235,11 +315,15 @@
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.pnl_picturebox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_basic)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,8 +334,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel pnl_picturebox;
-        private System.Windows.Forms.PictureBox picturebox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picturebox_basic;
@@ -261,5 +343,14 @@
         private us_btn us_btn3;
         private us_btn us_btn4;
         private us_btn us_btn5;
+        private us_btn thresholding_btn;
+        private us_btn btn_thresholding_otsu;
+        private us_btn btn_thresholding_apaptivethreshold;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox picturebox;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox picturebox_sub1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox picturebox_sub2;
     }
 }
