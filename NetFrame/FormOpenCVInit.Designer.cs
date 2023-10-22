@@ -49,9 +49,13 @@
             this.btn_colorsclae_read = new System.Windows.Forms.Button();
             this.btn_grayscale = new System.Windows.Forms.Button();
             this.btn_rgbtohsv = new System.Windows.Forms.Button();
+            this.us_btn1 = new NetFrame.us_btn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolstatus_label = new System.Windows.Forms.ToolStripStatusLabel();
-            this.us_btn1 = new NetFrame.us_btn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tablepnl_Main.SuspendLayout();
             this.menu_flowpnl.SuspendLayout();
             this.tablepnl_output.SuspendLayout();
@@ -59,6 +63,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
             this.submenu_flowpnl.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnInit
@@ -202,15 +210,19 @@
             this.tablepnl_output.AutoScroll = true;
             this.tablepnl_output.ColumnCount = 1;
             this.tablepnl_output.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tablepnl_output.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tablepnl_output.Controls.Add(this.panel3, 0, 3);
             this.tablepnl_output.Controls.Add(this.txtbox, 0, 0);
             this.tablepnl_output.Controls.Add(this.panel1, 0, 1);
+            this.tablepnl_output.Controls.Add(this.panel2, 0, 2);
             this.tablepnl_output.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablepnl_output.Location = new System.Drawing.Point(3, 131);
             this.tablepnl_output.Name = "tablepnl_output";
-            this.tablepnl_output.RowCount = 2;
-            this.tablepnl_output.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tablepnl_output.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tablepnl_output.RowCount = 4;
+            this.tablepnl_output.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tablepnl_output.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tablepnl_output.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tablepnl_output.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tablepnl_output.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tablepnl_output.Size = new System.Drawing.Size(1576, 687);
             this.tablepnl_output.TabIndex = 1;
             // 
@@ -221,7 +233,7 @@
             this.txtbox.Multiline = true;
             this.txtbox.Name = "txtbox";
             this.txtbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtbox.Size = new System.Drawing.Size(1570, 337);
+            this.txtbox.Size = new System.Drawing.Size(1570, 94);
             this.txtbox.TabIndex = 0;
             // 
             // panel1
@@ -230,9 +242,9 @@
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.picturebox);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 346);
+            this.panel1.Location = new System.Drawing.Point(3, 103);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1570, 338);
+            this.panel1.Size = new System.Drawing.Size(1570, 189);
             this.panel1.TabIndex = 2;
             // 
             // picturebox
@@ -296,6 +308,16 @@
             this.btn_rgbtohsv.UseVisualStyleBackColor = true;
             this.btn_rgbtohsv.Click += new System.EventHandler(this.btn_rgbtohsv_Click);
             // 
+            // us_btn1
+            // 
+            this.us_btn1.Location = new System.Drawing.Point(527, 3);
+            this.us_btn1.Name = "us_btn1";
+            this.us_btn1.Size = new System.Drawing.Size(100, 50);
+            this.us_btn1.TabIndex = 7;
+            this.us_btn1.Text = "create_grayscale";
+            this.us_btn1.UseVisualStyleBackColor = true;
+            this.us_btn1.Click += new System.EventHandler(this.us_btn1_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -313,15 +335,43 @@
             this.toolstatus_label.Size = new System.Drawing.Size(75, 20);
             this.toolstatus_label.Text = "tool_label";
             // 
-            // us_btn1
+            // panel2
             // 
-            this.us_btn1.Location = new System.Drawing.Point(527, 3);
-            this.us_btn1.Name = "us_btn1";
-            this.us_btn1.Size = new System.Drawing.Size(100, 50);
-            this.us_btn1.TabIndex = 7;
-            this.us_btn1.Text = "create_grayscale";
-            this.us_btn1.UseVisualStyleBackColor = true;
-            this.us_btn1.Click += new System.EventHandler(this.us_btn1_Click);
+            this.panel2.AutoScroll = true;
+            this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 298);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1570, 189);
+            this.panel2.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.AutoScroll = true;
+            this.panel3.AutoSize = true;
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 493);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1570, 191);
+            this.panel3.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // FormOpenCVInit
             // 
@@ -341,6 +391,10 @@
             this.submenu_flowpnl.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +426,9 @@
         private System.Windows.Forms.Button btn_grayscale;
         private System.Windows.Forms.Button btn_rgbtohsv;
         private us_btn us_btn1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

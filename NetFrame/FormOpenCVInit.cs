@@ -78,7 +78,7 @@ namespace NetFrame
 
         private void btnInit_Click(object sender, EventArgs e)
         {
-            var InitMat = new Mat(2, 2, MatType.CV_8UC3,new Scalar(0, 0, 255));
+            var InitMat = new Mat(32, 32, MatType.CV_8UC3,new Scalar(0, 0, 255));
 
             string values = "";
 
@@ -105,7 +105,10 @@ namespace NetFrame
             txtbox.Text = values;
 
 
-            var Init2Mat = new Mat(3, 3, MatType.CV_8UC4, new Scalar(0,11,22,33));
+            picturebox.Image = InitMat.ToBitmap();
+
+
+            var Init2Mat = new Mat(32, 32, MatType.CV_8UC4, new Scalar(0,255,0,125));
 
             values = "\r\n 3Dims \r\n";
 
@@ -133,8 +136,10 @@ namespace NetFrame
 
             txtbox.Text += values;
 
+            pictureBox1.Image = Init2Mat.ToBitmap();
 
-            var Init3Mat = new Mat(3, 2, MatType.CV_8UC3);
+
+            var Init3Mat = new Mat(32,32, MatType.CV_8UC3);
 
             Cv2.Randu(Init3Mat, new Scalar(0,0,0), new Scalar(255,255,255)); //랜덤으로 값을 생성 
 
@@ -162,6 +167,7 @@ namespace NetFrame
 
             txtbox.Text += values;
 
+            pictureBox2.Image = Init3Mat.ToBitmap();
         }
 
         private bool video_chk = true;

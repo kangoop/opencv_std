@@ -59,9 +59,9 @@ namespace NetFramework
 
                 var dialogresult = Form.ShowDialog();
             }
-            catch
+            catch(Exception ex) 
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
     }

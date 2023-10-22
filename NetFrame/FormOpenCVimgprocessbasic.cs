@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using System.Windows.Media.Media3D;
 using cvpoint = OpenCvSharp.Point;
 
 namespace NetFrame
@@ -55,9 +56,9 @@ namespace NetFrame
 
             Cv2.Rectangle(mat, new cvpoint(320, 160), new cvpoint(370, 190), Scalar.Green, 3);
 
-            picturebox.Size = new System.Drawing.Size(mat.Width, mat.Height);
+            picturebox_sub3.Size = new System.Drawing.Size(mat.Width, mat.Height);
 
-            picturebox.Image = mat.ToBitmap();
+            picturebox_sub3.Image = mat.ToBitmap();
         }
 
 
@@ -70,9 +71,9 @@ namespace NetFrame
 
             Mat submat = mat.SubMat(160,190,320,370);//Cv2.Rectangle(mat, new OpenCvSharp.Point(320, 160), new OpenCvSharp.Point(370, 190), Scalar.Green, 3);
 
-            picturebox.Size = new System.Drawing.Size(submat.Width, submat.Height);
+            picturebox_sub3.Size = new System.Drawing.Size(submat.Width, submat.Height);
 
-            picturebox.Image = submat.ToBitmap();
+            picturebox_sub3.Image = submat.ToBitmap();
         }
 
         private void us_btn5_Click(object sender, EventArgs e)
@@ -84,15 +85,23 @@ namespace NetFrame
             mat[160, 190, 370, 420] = submat.Clone(); //옆으로 복사 
             mat[130, 160, 320, 370] = submat.Clone(); //위으로 복사 
 
-            picturebox.Size = new System.Drawing.Size(mat.Width, mat.Height);
+            picturebox_sub3.Size = new System.Drawing.Size(mat.Width, mat.Height);
 
-            picturebox.Image = mat.ToBitmap();
+            picturebox_sub3.Image = mat.ToBitmap();
         }
 
         private void picturebox_basic_MouseMove(object sender, MouseEventArgs e)
         {
             label_location.Text = Utils.ToStringPoint(Cursor.Position)+", ";
             label_location.Text += Utils.ToStringPoint((this.picturebox_basic.PointToClient(Cursor.Position)));
+
+            var point = this.picturebox_basic.PointToClient(Cursor.Position);
+
+            Mat mat = BitmapConverter.ToMat((Bitmap)picturebox_basic.Image);
+
+            var value =  mat.Get<Vec4b>(point.X, point.Y);
+
+            label_location.Text += $"\n{value.Item0},{value.Item1},{value.Item2},{value.Item3}";
         }
 
         private void thresholding_btn_Click(object sender, EventArgs e)
@@ -114,9 +123,9 @@ namespace NetFrame
            */
 
 
-            picturebox.Size = new System.Drawing.Size(mat.Width, mat.Height);
+            picturebox_sub3.Size = new System.Drawing.Size(mat.Width, mat.Height);
 
-            picturebox.Image = svc.ToBitmap();
+            picturebox_sub3.Image = svc.ToBitmap();
         }
 
         private void btn_thresholding_otsu_Click(object sender, EventArgs e)
@@ -138,9 +147,9 @@ namespace NetFrame
 
                 picturebox_basic.Image = mat.ToBitmap();
 
-                picturebox.Size = new System.Drawing.Size(mat.Width, mat.Height);
+                picturebox_sub3.Size = new System.Drawing.Size(mat.Width, mat.Height);
 
-                picturebox.Image = svc.ToBitmap();
+                picturebox_sub3.Image = svc.ToBitmap();
 
             }
 
@@ -168,9 +177,9 @@ namespace NetFrame
                 //픽셀의 임계값을 계산하는 데 사용되는 픽셀 이웃의 크기: 3, 5, 7 등.
                 //평균 또는 가중 평균에서 상수를 뺍니다(아래 세부 정보 참조). 일반적으로 양수이지만 0 또는 음수일 수도 있습니다.
 
-                picturebox.Size = new System.Drawing.Size(mat.Width, mat.Height);
+                picturebox_sub3.Size = new System.Drawing.Size(mat.Width, mat.Height);
 
-                picturebox.Image = svc.ToBitmap();
+                picturebox_sub3.Image = svc.ToBitmap();
 
 
                 Cv2.Threshold(mat, svc2, 0, 255, ThresholdTypes.Binary |  ThresholdTypes.Otsu);
@@ -344,8 +353,8 @@ namespace NetFrame
             picturebox_sub1.Size = new System.Drawing.Size(400, 200);
             picturebox_sub1.Image = imgor.ToBitmap();
 
-            picturebox.Size = new System.Drawing.Size(400, 200);
-            picturebox.Image = imgxor.ToBitmap();
+            picturebox_sub3.Size = new System.Drawing.Size(400, 200);
+            picturebox_sub3.Image = imgxor.ToBitmap();
 
 
             picturebox_sub2.Size = new System.Drawing.Size(400, 200);
@@ -405,8 +414,8 @@ namespace NetFrame
 
             Mat img_diff_color = img_diff.CvtColor(ColorConversionCodes.GRAY2RGB);
 
-            picturebox.Size = new System.Drawing.Size(img_b.Width, img_b.Height);
-            picturebox.Image = img_b.ToBitmap();
+            picturebox_sub3.Size = new System.Drawing.Size(img_b.Width, img_b.Height);
+            picturebox_sub3.Image = img_b.ToBitmap();
 
             Mat xor = new Mat(img_a.Rows, img_a.Cols, MatType.CV_8UC3);
 
@@ -440,13 +449,59 @@ namespace NetFrame
 
             Mat img_fg = Cv2.ImRead(a_filepath,ImreadModes.Unchanged);
 
-            Mat img_bg= Cv2.ImRead(b_filepath);
+            Mat img_bg = Cv2.ImRead(b_filepath);
+
+            Mat img_bg_clone = img_bg.Clone();
+
+            //Mask 방식 에 대해서 실제 픽셀 값을 수정하는 방식 으로 변경 하여 적용 하였음 
+
+            for (int i = 0; i < img_fg.Height; i++)
+            {
+                for (int j = 0; j < img_fg.Width; j++)
+                {
+                    var itemvalue = img_fg.Get<Vec4b>(i, j);
+
+                    if (itemvalue.Item3 > 0)
+                    {
+                        img_bg_clone.Set<Vec3b>(i + 10, j + 10, new Vec3b(itemvalue.Item0, itemvalue.Item1, itemvalue.Item2));
+                    }
+                }
+            }
+            picturebox_sub7.Size = new System.Drawing.Size(img_bg_clone.Width, img_bg_clone.Height);
+            picturebox_sub7.Image = img_bg_clone.ToBitmap();
 
             picturebox_basic.Size = new System.Drawing.Size(img_fg.Width,img_fg.Height);
             picturebox_basic.Image = img_fg.ToBitmap();
 
             picturebox_sub1.Size = new System.Drawing.Size(img_bg.Width, img_bg.Height);
             picturebox_sub1.Image = img_bg.ToBitmap();
+
+            Mat img_fg_clone = img_fg.Clone().ExtractChannel(3); //해당 채널 영역만 추출  알파 영역 추출
+            Cv2.Threshold(img_fg_clone, img_fg_clone, 1D, 255D, ThresholdTypes.Binary);
+            Cv2.BitwiseNot(img_fg_clone, img_fg_clone); // 변환 
+            picturebox_sub2.Size = new System.Drawing.Size(img_fg_clone.Width, img_fg_clone.Height);
+            picturebox_sub2.Image = img_fg_clone.ToBitmap();
+
+            Cv2.CvtColor(img_fg, img_fg, ColorConversionCodes.BGRA2BGR);
+            Mat roi = img_bg.SubMat(10, 10 + img_fg.Height, 10, 10 + img_fg.Width);
+
+            Mat mask_fg = img_fg.Clone();
+            Mat mask_bg = roi.Clone();
+            Cv2.BitwiseAnd(img_fg, img_fg, mask_fg);
+            Cv2.BitwiseAnd(roi, roi, mask_bg);
+
+            picturebox_sub3.Size = new System.Drawing.Size(mask_fg.Width, mask_fg.Height);
+            picturebox_sub3.Image = mask_fg.ToBitmap();
+
+            picturebox_sub4.Size = new System.Drawing.Size(mask_bg.Width, mask_bg.Height);
+            picturebox_sub4.Image = roi.ToBitmap();
+
+            Mat mask_add = new Mat();
+
+            Cv2.Add(mask_fg, mask_bg, mask_add); //두x,y 를 더하는 것은 아니다.
+            picturebox_sub5.Size = new System.Drawing.Size(mask_add.Width, mask_add.Height);
+            picturebox_sub5.Image = mask_add.ToBitmap();
+
 
 
 

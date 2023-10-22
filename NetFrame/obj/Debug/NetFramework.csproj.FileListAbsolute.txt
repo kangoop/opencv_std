@@ -63,7 +63,6 @@ C:\Users\pc1\OneDrive\Desktop\Local\Dev\Opencv\NetFrame\bin\Debug\System.Numeric
 C:\Users\pc1\OneDrive\Desktop\Local\Dev\Opencv\NetFrame\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\pc1\OneDrive\Desktop\Local\Dev\Opencv\NetFrame\bin\Debug\System.ValueTuple.xml
 C:\Users\pc1\OneDrive\Desktop\Local\Dev\Opencv\NetFrame\obj\Debug\NetFramework.csproj.AssemblyReference.cache
-C:\Users\pc1\OneDrive\Desktop\Local\Dev\Opencv\NetFrame\obj\Debug\NetFramework.csproj.SuggestedBindingRedirects.cache
 C:\Users\pc1\OneDrive\Desktop\Local\Dev\Opencv\NetFrame\obj\Debug\NetFrame.Basic.resources
 C:\Users\pc1\OneDrive\Desktop\Local\Dev\Opencv\NetFrame\obj\Debug\NetFramework.Form1.resources
 C:\Users\pc1\OneDrive\Desktop\Local\Dev\Opencv\NetFrame\obj\Debug\NetFrame.FormBasic.resources
