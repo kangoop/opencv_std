@@ -7,4 +7,4 @@
 
 <h1>https://github.com/shimat/opencvsharp</h1>
 <br>
-<h3>opencv nuget site  </h3>
+<h3>참고 opencv nuget site  </h3>
