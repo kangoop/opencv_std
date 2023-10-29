@@ -396,11 +396,14 @@ namespace NetFrame
 명도값 V는 흰색, 빨간색 등을 100%, 검은색을 0%로 하였을 때 밝은 정도를 나타낸다.
              0 어두운 상태 255 가장 밝은 상태 
              */
-
-            txtbox.Text += $"{hsv_red.Get<Vec3b>(0).Item0},{hsv_red.Get<Vec3b>(0).Item1},{hsv_red.Get<Vec3b>(0).Item2}\r\n";
-            txtbox.Text += $"{hsv_blue.Get<Vec3b>(0).Item0},{hsv_blue.Get<Vec3b>(0).Item1},{hsv_blue.Get<Vec3b>(0).Item2}\r\n";
-            txtbox.Text += $"{hsv_green.Get<Vec3b>(0).Item0},{hsv_green.Get<Vec3b>(0).Item1},{hsv_green.Get<Vec3b>(0).Item2}\r\n";
-            txtbox.Text += $"{hsv_temp.Get<Vec3b>(0).Item0},{hsv_temp.Get<Vec3b>(0).Item1},{hsv_temp.Get<Vec3b>(0).Item2}\r\n";
+            txtbox.Text += $"Red : {red.Get<Vec3b>(0).Item0},{red.Get<Vec3b>(0).Item1},{red.Get<Vec3b>(0).Item2}\r\n";
+            txtbox.Text += $"blue : {blue.Get<Vec3b>(0).Item0},{blue.Get<Vec3b>(0).Item1},{blue.Get<Vec3b>(0).Item2}\r\n";
+            txtbox.Text += $"green : {green.Get<Vec3b>(0).Item0},{green.Get<Vec3b>(0).Item1},{green.Get<Vec3b>(0).Item2}\r\n";
+            txtbox.Text += $"yellow : {temp.Get<Vec3b>(0).Item0},{temp.Get<Vec3b>(0).Item1},{temp.Get<Vec3b>(0).Item2}\r\n";
+            txtbox.Text += $"Red : {hsv_red.Get<Vec3b>(0).Item0},{hsv_red.Get<Vec3b>(0).Item1},{hsv_red.Get<Vec3b>(0).Item2}\r\n";
+            txtbox.Text += $"blue : {hsv_blue.Get<Vec3b>(0).Item0},{hsv_blue.Get<Vec3b>(0).Item1},{hsv_blue.Get<Vec3b>(0).Item2}\r\n";
+            txtbox.Text += $"green : {hsv_green.Get<Vec3b>(0).Item0},{hsv_green.Get<Vec3b>(0).Item1},{hsv_green.Get<Vec3b>(0).Item2}\r\n";
+            txtbox.Text += $"yellow : {hsv_temp.Get<Vec3b>(0).Item0},{hsv_temp.Get<Vec3b>(0).Item1},{hsv_temp.Get<Vec3b>(0).Item2}\r\n";
 
 
             txtbox.Text += "YUV\r\n";

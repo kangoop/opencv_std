@@ -17,10 +17,20 @@ namespace NetStandard
             }
         }
 
+        public string Description
+        {
+            get
+            {
+                return $"{Math.Round((decimal)Environment.WorkingSet / 1000_000, 2)}MB";
+            }
+        }
+
         public Opencv_dev()
         {
             _Version = Cv2.GetVersionString();
 
+
+            
         }
 
 

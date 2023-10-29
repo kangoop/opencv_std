@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,14 +15,22 @@ namespace NetFramework
 {
     public partial class Form1 : Form
     {
+        Opencv_dev opencv_Dev;
+
         public Form1()
         {
             InitializeComponent();
 
-            Opencv_dev opencv_Dev = new Opencv_dev();
+            opencv_Dev = new Opencv_dev();
 
             toolStrip_Version.Text = opencv_Dev.Version;
+
+            toolStrip_Description.Text = opencv_Dev.Description;
+
+            
         }
+
+        
 
         private void btnInit_Click(object sender, EventArgs e)
         {
@@ -30,6 +39,8 @@ namespace NetFramework
                 var Form = new FormOpenCVInit();
 
                 var dialogresult = Form.ShowDialog();
+
+                Utils.ParentFormWorkSetUpdate();
             }
             catch
             {
@@ -44,6 +55,8 @@ namespace NetFramework
                 var Form = new FormOpenCVDraw();
 
                 var dialogresult = Form.ShowDialog();
+
+                Utils.ParentFormWorkSetUpdate();
             }
             catch
             {
@@ -55,14 +68,22 @@ namespace NetFramework
         {
             try
             {
+
                 var Form = new FormOpenCVimgprocessbasic();
 
                 var dialogresult = Form.ShowDialog();
+
+                Utils.ParentFormWorkSetUpdate();
             }
             catch(Exception ex) 
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void WorkSetUpdate()
+        {
+            toolStrip_Description.Text = opencv_Dev.Description;
         }
     }
 }

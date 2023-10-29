@@ -1,4 +1,5 @@
-﻿using NetStandard;
+﻿using NetFramework;
+using NetStandard;
 using OpenCvSharp;
 using OpenCvSharp.Extensions;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlTypes;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -95,13 +97,7 @@ namespace NetFrame
             label_location.Text = Utils.ToStringPoint(Cursor.Position)+", ";
             label_location.Text += Utils.ToStringPoint((this.picturebox_basic.PointToClient(Cursor.Position)));
 
-            var point = this.picturebox_basic.PointToClient(Cursor.Position);
 
-            Mat mat = BitmapConverter.ToMat((Bitmap)picturebox_basic.Image);
-
-            var value =  mat.Get<Vec4b>(point.X, point.Y);
-
-            label_location.Text += $"\n{value.Item0},{value.Item1},{value.Item2},{value.Item3}";
         }
 
         private void thresholding_btn_Click(object sender, EventArgs e)
@@ -503,12 +499,71 @@ namespace NetFrame
             picturebox_sub5.Image = mask_add.ToBitmap();
 
 
-
+            Utils.ParentFormWorkSetUpdate();
 
 
 
         }
 
+        private void us_btn10_Click(object sender, EventArgs e)
+        {
+            string file_path = string.Empty;
+
+            if (us_btn10.OpenFileDialog() == true)
+            {
+                file_path = us_btn10.imgfiles[0];
+
+                Mat mat = Cv2.ImRead(file_path, ImreadModes.Color);
+                picturebox_basic.Size=new System.Drawing.Size(mat.Width, mat.Height);
+                picturebox_basic.Image= mat.ToBitmap();
+
+
+                Mat hsv = mat.Clone();
+                hsv = hsv.CvtColor(ColorConversionCodes.BGR2HSV);
+
+
+                //hsv 의 색상을 담당하는 채널은 0 채널임으로 
+                //0채널을 추출하고 90 ~ 120 사이의 색상이 파란색을 뜻함으로 mask 블루를 추출 
+                Mat maskblue = hsv.ExtractChannel(0).InRange(new Scalar(90),new Scalar(120));
+                picturebox_sub1.Size = new System.Drawing.Size(mat.Width, mat.Height);
+                picturebox_sub1.Image = maskblue.ToBitmap();
+
+                //0채널으로 추출한 mask Mat 구조를 다시 gray 를 RGB 형식으로 변경 
+                Mat blue = mat.Clone();              
+                Cv2.BitwiseAnd(mat,maskblue.CvtColor(ColorConversionCodes.GRAY2BGR),blue);
+                picturebox_sub2.Size = new System.Drawing.Size(hsv.Width, hsv.Height);
+                picturebox_sub2.Image = blue.ToBitmap();
+
+                Mat maskgreen = hsv.ExtractChannel(0).InRange(new Scalar(45), new Scalar(75));
+
+                Mat green = mat.Clone();
+                Cv2.BitwiseAnd(mat, maskgreen.CvtColor(ColorConversionCodes.GRAY2BGR), green);
+                picturebox_sub3.Size = new System.Drawing.Size(hsv.Width, hsv.Height);
+                picturebox_sub3.Image = green.ToBitmap();
+
+
+                Mat maskred_1 = hsv.ExtractChannel(0).InRange(new Scalar(0), new Scalar(15));
+                Mat maskred_2 = hsv.ExtractChannel(0).InRange(new Scalar(165), new Scalar(180));
+
+                Mat red_2 = mat.Clone();
+                Mat red_1 = mat.Clone();
+                Mat red = mat.Clone();
+                Cv2.BitwiseAnd(mat, maskred_1.CvtColor(ColorConversionCodes.GRAY2BGR), red_1);
+                Cv2.BitwiseAnd(mat, maskred_2.CvtColor(ColorConversionCodes.GRAY2BGR), red_2);
+                Cv2.BitwiseOr(red_1, red_2, red);
+                picturebox_sub4.Size = new System.Drawing.Size(hsv.Width, hsv.Height);
+                picturebox_sub4.Image = red.ToBitmap();
+
+                Mat maskyellow = hsv.ExtractChannel(0).InRange(new Scalar(20), new Scalar(35));
+
+                Mat yellow = mat.Clone();
+                Cv2.BitwiseAnd(mat, maskyellow.CvtColor(ColorConversionCodes.GRAY2BGR), yellow);
+                picturebox_sub5.Size = new System.Drawing.Size(hsv.Width, hsv.Height);
+                picturebox_sub5.Image = yellow.ToBitmap();
+
+
+            }
+        }
     }
 
     public class errorpoint

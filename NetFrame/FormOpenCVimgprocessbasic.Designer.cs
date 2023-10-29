@@ -35,7 +35,12 @@
             this.us_btn7 = new NetFrame.us_btn();
             this.us_btn8 = new NetFrame.us_btn();
             this.us_btn9 = new NetFrame.us_btn();
+            this.us_btn10 = new NetFrame.us_btn();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.picturebox_sub6 = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.picturebox_sub7 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.picturebox_sub2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,6 +49,10 @@
             this.picturebox_sub1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.picturebox_sub3 = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.picturebox_sub4 = new System.Windows.Forms.PictureBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.picturebox_sub5 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.us_btn1 = new NetFrame.us_btn();
             this.us_btn2 = new NetFrame.us_btn();
@@ -54,19 +63,15 @@
             this.btn_thresholding_otsu = new NetFrame.us_btn();
             this.btn_thresholding_apaptivethreshold = new NetFrame.us_btn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label_value = new System.Windows.Forms.TextBox();
             this.label_location = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.picturebox_sub7 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.picturebox_sub4 = new System.Windows.Forms.PictureBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.picturebox_sub5 = new System.Windows.Forms.PictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.picturebox_sub6 = new System.Windows.Forms.PictureBox();
+            this.label_value = new System.Windows.Forms.TextBox();
             this.tablepnl_main.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub6)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub7)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -75,16 +80,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub1)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub3)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub7)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub4)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub5)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub6)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablepnl_main
@@ -115,6 +116,7 @@
             this.flowLayoutPanel2.Controls.Add(this.us_btn7);
             this.flowLayoutPanel2.Controls.Add(this.us_btn8);
             this.flowLayoutPanel2.Controls.Add(this.us_btn9);
+            this.flowLayoutPanel2.Controls.Add(this.us_btn10);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 67);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -171,6 +173,16 @@
             this.us_btn9.UseVisualStyleBackColor = true;
             this.us_btn9.Click += new System.EventHandler(this.us_btn9_Click);
             // 
+            // us_btn10
+            // 
+            this.us_btn10.Location = new System.Drawing.Point(833, 3);
+            this.us_btn10.Name = "us_btn10";
+            this.us_btn10.Size = new System.Drawing.Size(200, 50);
+            this.us_btn10.TabIndex = 8;
+            this.us_btn10.Text = "HSV_MASK";
+            this.us_btn10.UseVisualStyleBackColor = true;
+            this.us_btn10.Click += new System.EventHandler(this.us_btn10_Click);
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -194,6 +206,44 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1576, 559);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.AutoScroll = true;
+            this.panel8.Controls.Add(this.picturebox_sub6);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(3, 420);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(782, 136);
+            this.panel8.TabIndex = 8;
+            // 
+            // picturebox_sub6
+            // 
+            this.picturebox_sub6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturebox_sub6.Location = new System.Drawing.Point(0, 0);
+            this.picturebox_sub6.Name = "picturebox_sub6";
+            this.picturebox_sub6.Size = new System.Drawing.Size(160, 90);
+            this.picturebox_sub6.TabIndex = 2;
+            this.picturebox_sub6.TabStop = false;
+            // 
+            // panel5
+            // 
+            this.panel5.AutoScroll = true;
+            this.panel5.Controls.Add(this.picturebox_sub7);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(791, 420);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(782, 136);
+            this.panel5.TabIndex = 5;
+            // 
+            // picturebox_sub7
+            // 
+            this.picturebox_sub7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturebox_sub7.Location = new System.Drawing.Point(0, 0);
+            this.picturebox_sub7.Name = "picturebox_sub7";
+            this.picturebox_sub7.Size = new System.Drawing.Size(160, 90);
+            this.picturebox_sub7.TabIndex = 2;
+            this.picturebox_sub7.TabStop = false;
             // 
             // panel2
             // 
@@ -273,6 +323,42 @@
             this.picturebox_sub3.Size = new System.Drawing.Size(160, 90);
             this.picturebox_sub3.TabIndex = 1;
             this.picturebox_sub3.TabStop = false;
+            // 
+            // panel6
+            // 
+            this.panel6.AutoScroll = true;
+            this.panel6.Controls.Add(this.picturebox_sub4);
+            this.panel6.Location = new System.Drawing.Point(3, 281);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(782, 133);
+            this.panel6.TabIndex = 6;
+            // 
+            // picturebox_sub4
+            // 
+            this.picturebox_sub4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturebox_sub4.Location = new System.Drawing.Point(0, 0);
+            this.picturebox_sub4.Name = "picturebox_sub4";
+            this.picturebox_sub4.Size = new System.Drawing.Size(160, 90);
+            this.picturebox_sub4.TabIndex = 2;
+            this.picturebox_sub4.TabStop = false;
+            // 
+            // panel7
+            // 
+            this.panel7.AutoScroll = true;
+            this.panel7.Controls.Add(this.picturebox_sub5);
+            this.panel7.Location = new System.Drawing.Point(791, 281);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(782, 133);
+            this.panel7.TabIndex = 7;
+            // 
+            // picturebox_sub5
+            // 
+            this.picturebox_sub5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picturebox_sub5.Location = new System.Drawing.Point(0, 0);
+            this.picturebox_sub5.Name = "picturebox_sub5";
+            this.picturebox_sub5.Size = new System.Drawing.Size(160, 90);
+            this.picturebox_sub5.TabIndex = 2;
+            this.picturebox_sub5.TabStop = false;
             // 
             // flowLayoutPanel1
             // 
@@ -388,15 +474,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1576, 122);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // label_value
-            // 
-            this.label_value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_value.Location = new System.Drawing.Point(791, 3);
-            this.label_value.Multiline = true;
-            this.label_value.Name = "label_value";
-            this.label_value.Size = new System.Drawing.Size(782, 116);
-            this.label_value.TabIndex = 1;
-            // 
             // label_location
             // 
             this.label_location.AutoSize = true;
@@ -408,79 +485,14 @@
             this.label_location.TabIndex = 0;
             this.label_location.Text = "label1";
             // 
-            // panel5
+            // label_value
             // 
-            this.panel5.AutoScroll = true;
-            this.panel5.Controls.Add(this.picturebox_sub7);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(791, 420);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(782, 136);
-            this.panel5.TabIndex = 5;
-            // 
-            // picturebox_sub7
-            // 
-            this.picturebox_sub7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picturebox_sub7.Location = new System.Drawing.Point(0, 0);
-            this.picturebox_sub7.Name = "picturebox_sub7";
-            this.picturebox_sub7.Size = new System.Drawing.Size(160, 90);
-            this.picturebox_sub7.TabIndex = 2;
-            this.picturebox_sub7.TabStop = false;
-            // 
-            // panel6
-            // 
-            this.panel6.AutoScroll = true;
-            this.panel6.Controls.Add(this.picturebox_sub4);
-            this.panel6.Location = new System.Drawing.Point(3, 281);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(782, 133);
-            this.panel6.TabIndex = 6;
-            // 
-            // picturebox_sub4
-            // 
-            this.picturebox_sub4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picturebox_sub4.Location = new System.Drawing.Point(0, 0);
-            this.picturebox_sub4.Name = "picturebox_sub4";
-            this.picturebox_sub4.Size = new System.Drawing.Size(160, 90);
-            this.picturebox_sub4.TabIndex = 2;
-            this.picturebox_sub4.TabStop = false;
-            // 
-            // panel7
-            // 
-            this.panel7.AutoScroll = true;
-            this.panel7.Controls.Add(this.picturebox_sub5);
-            this.panel7.Location = new System.Drawing.Point(791, 281);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(782, 133);
-            this.panel7.TabIndex = 7;
-            // 
-            // picturebox_sub5
-            // 
-            this.picturebox_sub5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picturebox_sub5.Location = new System.Drawing.Point(0, 0);
-            this.picturebox_sub5.Name = "picturebox_sub5";
-            this.picturebox_sub5.Size = new System.Drawing.Size(160, 90);
-            this.picturebox_sub5.TabIndex = 2;
-            this.picturebox_sub5.TabStop = false;
-            // 
-            // panel8
-            // 
-            this.panel8.AutoScroll = true;
-            this.panel8.Controls.Add(this.picturebox_sub6);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(3, 420);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(782, 136);
-            this.panel8.TabIndex = 8;
-            // 
-            // picturebox_sub6
-            // 
-            this.picturebox_sub6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picturebox_sub6.Location = new System.Drawing.Point(0, 0);
-            this.picturebox_sub6.Name = "picturebox_sub6";
-            this.picturebox_sub6.Size = new System.Drawing.Size(160, 90);
-            this.picturebox_sub6.TabIndex = 2;
-            this.picturebox_sub6.TabStop = false;
+            this.label_value.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_value.Location = new System.Drawing.Point(791, 3);
+            this.label_value.Multiline = true;
+            this.label_value.Name = "label_value";
+            this.label_value.Size = new System.Drawing.Size(782, 116);
+            this.label_value.TabIndex = 1;
             // 
             // FormOpenCVimgprocessbasic
             // 
@@ -494,6 +506,10 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub6)).EndInit();
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub7)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub2)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -502,17 +518,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub1)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub3)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub7)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub4)).EndInit();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub5)).EndInit();
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_sub6)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -542,7 +554,6 @@
         private System.Windows.Forms.PictureBox picturebox_sub2;
         private us_btn us_btn_img_arithmentic;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox label_value;
         private us_btn us_btn6;
         private us_btn us_btn7;
         private us_btn us_btn8;
@@ -555,5 +566,7 @@
         private System.Windows.Forms.PictureBox picturebox_sub4;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox picturebox_sub5;
+        private us_btn us_btn10;
+        private System.Windows.Forms.TextBox label_value;
     }
 }
